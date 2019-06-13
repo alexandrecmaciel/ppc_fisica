@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_151337) do
+ActiveRecord::Schema.define(version: 2019_06_13_153711) do
 
   create_table "categoria_especificas", force: :cascade do |t|
     t.string "tipo"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 2019_06_13_151337) do
     t.integer "usuario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "obrigatoria"
+    t.integer "categoria_geral"
+    t.integer "categoria_especifica"
+    t.integer "categoria_geral_id"
+    t.integer "categoria_especifica_id"
+    t.index ["categoria_especifica_id"], name: "index_disciplinas_on_categoria_especifica_id"
+    t.index ["categoria_geral_id"], name: "index_disciplinas_on_categoria_geral_id"
     t.index ["usuario_id"], name: "index_disciplinas_on_usuario_id"
   end
 
