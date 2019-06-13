@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @disciplina.titulo %>
+</p>
+
+<p>
+  <strong>Ch:</strong>
+  <%= @disciplina.ch %>
+</p>
+
+<p>
+  <strong>Ementa:</strong>
+  <%= @disciplina.ementa %>
+</p>
+
+<p>
+  <strong>Bib basica:</strong>
+  <%= @disciplina.bib_basica %>
+</p>
+
+<p>
+  <strong>Bib complementar:</strong>
+  <%= @disciplina.bib_complementar %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @disciplina.usuario %>
+</p>
+
+<%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |
+<%= link_to 'Back', disciplinas_path %>

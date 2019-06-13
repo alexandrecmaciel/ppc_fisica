@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Disciplinas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Ch</th>
+      <th>Ementa</th>
+      <th>Bib basica</th>
+      <th>Bib complementar</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disciplinas.each do |disciplina| %>
+      <tr>
+        <td><%= disciplina.titulo %></td>
+        <td><%= disciplina.ch %></td>
+        <td><%= disciplina.ementa %></td>
+        <td><%= disciplina.bib_basica %></td>
+        <td><%= disciplina.bib_complementar %></td>
+        <td><%= disciplina.usuario %></td>
+        <td><%= link_to 'Show', disciplina %></td>
+        <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
+        <td><%= link_to 'Destroy', disciplina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Disciplina', new_disciplina_path %>
