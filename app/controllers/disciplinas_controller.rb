@@ -15,10 +15,14 @@ class DisciplinasController < ApplicationController
   # GET /disciplinas/new
   def new
     @disciplina = Disciplina.new
+    @cat_geral = CategoriaGeral.all
+    @cat_espec = CategoriaEspecifica.all
   end
 
   # GET /disciplinas/1/edit
   def edit
+    @cat_geral = CategoriaGeral.all
+    @cat_espec = CategoriaEspecifica.all
   end
 
   # POST /disciplinas
@@ -69,6 +73,6 @@ class DisciplinasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disciplina_params
-      params.require(:disciplina).permit(:titulo, :ch, :ementa, :bib_basica, :bib_complementar, :usuario_id)
+      params.require(:disciplina).permit(:titulo, :obrigatoria, :ch, :ementa, :bib_basica, :bib_complementar, :categoria_geral_id, :categoria_especifica_id, :usuario_id)
     end
 end
