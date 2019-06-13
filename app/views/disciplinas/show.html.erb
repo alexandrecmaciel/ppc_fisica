@@ -12,22 +12,34 @@
 
 <p>
   <strong>Ementa:</strong>
-  <%= @disciplina.ementa %>
+  <ul>
+    <% @disciplina.ementa.split(". ").each do |item| %>
+      <li><%= item %></li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
-  <strong>Bib basica:</strong>
-  <%= @disciplina.bib_basica %>
+  <strong>Bibliografia Básica:</strong>
+  <ul>
+  <% @disciplina.bib_basica.split("\n").each do |item| %>
+    <li><%= item %></li>
+  <% end %>
+  </ul>
 </p>
 
 <p>
-  <strong>Bib complementar:</strong>
-  <%= @disciplina.bib_complementar %>
+  <strong>Bibliografia Complementar:</strong>
+  <ul>
+  <% @disciplina.bib_complementar.split("\n").each do |item| %>
+    <li><%= item %></li>
+  <% end %>
+  </ul>
 </p>
 
 <p>
   <strong>Usuario:</strong>
-  <%= @disciplina.usuario %>
+  <%= @disciplina.usuario.name %>
 </p>
 
 <%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |

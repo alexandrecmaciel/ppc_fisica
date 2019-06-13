@@ -1,0 +1,2 @@
+class CategoriaEspecifica < ApplicationRecord
+end
